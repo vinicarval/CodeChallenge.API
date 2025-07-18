@@ -38,6 +38,7 @@ namespace CodeChallenge.API.Controllers
 
 
         [HttpPut]
+        [Authorize]
         public async Task<IActionResult> Put(Product product)
         {
             var result = await _productService.UpdateProductAsync(product);
@@ -51,6 +52,7 @@ namespace CodeChallenge.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             var result = await _productService.DeleteProductAsync(id);
